@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -10,7 +11,11 @@ function Footer() {
         >
           <div className="pt-5">
             <h2 className="text-light">Interested in working with me?</h2>
-            <button className="btn btn-outline-light btn-lg">Let's talk</button>
+            <Link to="/contact">
+              <button className="btn btn-outline-light btn-lg">
+                Let's talk
+              </button>
+            </Link>
           </div>
 
           <div className="row">
@@ -19,16 +24,16 @@ function Footer() {
               <a href="/" className="text-light d-block">
                 Blogs
               </a>
-              <a href="/" className="text-light d-block">
+              <Link to="/" className="text-light d-block">
                 Home
-              </a>
-              <a href="/" className="text-light d-block">
+              </Link>
+              <Link to="/contact" className="text-light d-block">
                 Contact me
-              </a>
-              <a href="/" className="text-light d-block">
+              </Link>
+              <Link to="/write-a-recommendation" className="text-light d-block">
                 Write a recommendation
                 <i className="fa-regular fa-heart"></i>
-              </a>
+              </Link>
             </div>
             <div className="col-12 col-md-4 text-light text-justify py-3">
               <p>

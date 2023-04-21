@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Projectcard(props) {
-  const { title, excerpt, imageUrl } = props;
+  const { title, excerpt, imageUrl, id } = props;
   return (
     <>
       <div className="card shadow h-100">
@@ -9,7 +10,7 @@ function Projectcard(props) {
         <div className="card-body">
           <h4 className="card-title">{title}</h4>
           <p className="card-text">{excerpt}</p>
-          <a href="/" className="stretched-link"></a>
+          <Link to={`/project/${id}`} className="stretched-link"></Link>
         </div>
       </div>
     </>

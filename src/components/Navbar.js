@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-sm fixed-top bg-white">
-        <div className="container mt-2">
-          <a href="/" className="navbar-brand text-dark font-weight-bold">
+      <nav className="navbar navbar-expand-md fixed-top bg-white">
+        <div className="container my-1">
+          <Link to="/" className="navbar-brand text-dark font-weight-bold">
             Krishna yadav
-          </a>
-          <button className="btn btn-outline-info ml-auto">Contact me</button>
+          </Link>
+          <Link to="/contact" className="ml-auto mx-3">
+            <button className="btn btn-outline-info ">Contact me</button>
+          </Link>
           <button
             className="navbar-toggler"
             data-toggle="collapse"
@@ -16,7 +19,10 @@ function Navbar() {
           >
             <i className="fa-solid fa-bars"></i>
           </button>
-          <div className="collapse navbar-collapse " id="collapseNav">
+          <div
+            className="collapse navbar-collapse flex-grow-0 "
+            id="collapseNav"
+          >
             <div className="navbar-nav">
               <a
                 href="/"

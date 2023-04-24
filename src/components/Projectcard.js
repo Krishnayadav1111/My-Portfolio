@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Projectcard(props) {
-  const { title, excerpt, imageUrl, id } = props;
+  const { id, title, excerpt, imageUrl } = props;
   return (
     <>
       <div className="card shadow h-100">

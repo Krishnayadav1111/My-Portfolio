@@ -4,6 +4,7 @@ import "easymde/dist/easymde.min.css";
 import ReactMarkdown from "react-markdown";
 import { Consumer } from "./context";
 import { v4 as uuid } from "uuid";
+import axios from "axios";
 
 class AddProject extends Component {
   state = {
@@ -28,9 +29,21 @@ class AddProject extends Component {
     });
   };
 
-  onSubmit = (handler, event) => {
+  onSubmit = async (handler, event) => {
     event.preventDefault();
-    let isSuccessful = true;
+
+    const newProject = {
+      id: uuid(),
+      imageUrl: this.state.imageUrl,
+      title: this.state.title,
+      excerpt: this.state.excerpt,
+      body: this.state.body,
+    };
+    const response = await axios.post(
+      "http://127.0.0.1:9000/api/project",
+      newProject
+    );
+    const isSuccessful = response.data.isSuccessful;
 
     if (isSuccessful) {
       this.setState({
@@ -43,14 +56,6 @@ class AddProject extends Component {
         submitMessageTextColor: "text-danger",
       });
     }
-
-    const newProject = {
-      id: uuid(),
-      imageUrl: this.state.imageUrl,
-      title: this.state.title,
-      excerpt: this.state.excerpt,
-      body: this.state.body,
-    };
 
     handler("ADD_PROJECT", newProject);
   };

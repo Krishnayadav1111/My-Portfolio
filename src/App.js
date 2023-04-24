@@ -21,11 +21,13 @@ import ProjectSection from "./components/ProjectSection";
 import AllProjects from "./components/AllProjects";
 import AllBlogs from "./components/AllBlogs";
 import AddBlog from "./components/AddBlog";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Provider>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -45,6 +47,7 @@ function App() {
             path="/write-a-recommendation"
             component={WriteRecommendation}
           />
+
           <Route exact path="/project/add" component={AddProject} />
           <Route exact path="/Blog/add" component={AddBlog} />
           <Route exact path="/allprojects" component={AllProjects} />

@@ -44,9 +44,15 @@ class RecommendationCard extends Component {
               ></Link>
               <Modal show={this.state.showModal} onHide={this.handleClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>{name}'s Recommendation</Modal.Title>
+                  <Modal.Title>{message}'s </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{message}</Modal.Body>
+                <Modal.Body className="text-center font-weight-bold">
+                  {name}
+                </Modal.Body>
+                <Modal.Body className="text-center font-weight-bold">
+                  {designation} at {company}
+                </Modal.Body>
+
                 <Modal.Footer>
                   <Button variant="secondary" onClick={this.handleClose}>
                     Close

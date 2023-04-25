@@ -4,13 +4,14 @@ import "easymde/dist/easymde.min.css";
 import ReactMarkdown from "react-markdown";
 import { Consumer } from "./context";
 import { v4 as uuid } from "uuid";
+import axios from "axios";
 
 class AddBlog extends Component {
   state = {
-    imageUrl1: "",
-    title1: "",
-    excerpt1: "",
-    body1: "",
+    imageUrl: "",
+    title: "",
+    excerpt: "",
+    body: "",
     submitMessage: "",
     submitMessageTextColor: "",
   };
@@ -28,9 +29,21 @@ class AddBlog extends Component {
   //     });
   //   };
 
-  onSubmit = (handler, event) => {
+  onSubmit = async (handler, event) => {
     event.preventDefault();
-    let isSuccessful = true;
+
+    const newBlog = {
+      id: uuid(),
+      imageUrl: this.state.imageUrl,
+      title: this.state.title,
+      excerpt: this.state.excerpt,
+      body: this.state.body,
+    };
+    const response = await axios.post(
+      "http://127.0.0.1:9000/api/blog",
+      newBlog
+    );
+    const isSuccessful = response.data.isSuccessful;
 
     if (isSuccessful) {
       this.setState({
@@ -44,14 +57,6 @@ class AddBlog extends Component {
       });
     }
 
-    const newBlog = {
-      id: uuid(),
-      imageUrl1: this.state.imageUrl1,
-      title1: this.state.title1,
-      excerpt1: this.state.excerpt1,
-      body1: this.state.body1,
-    };
-
     handler("ADD_BLOG", newBlog);
   };
 
@@ -60,9 +65,9 @@ class AddBlog extends Component {
       <Consumer>
         {(value) => {
           const {
-            imageUrl1,
-            title1,
-            body1,
+            imageUrl,
+            title,
+            body,
             submitMessageTextColor,
             submitMessage,
           } = this.state;
@@ -76,34 +81,34 @@ class AddBlog extends Component {
                 <div className="col-12 col-lg-6 px-lg-5">
                   <form onSubmit={this.onSubmit.bind(this, handler)}>
                     <div className="form-group">
-                      <label htmlFor="imageUrl1">Featured Image Url* </label>
+                      <label htmlFor="imageUrl">Featured Image Url* </label>
                       <input
-                        name="imageUrl1"
+                        name="imageUrl"
                         className="form-control"
-                        id="imageUrl1"
+                        id="imageUrl"
                         onChange={this.onChange}
                         placeholder="ImageUrl"
                         required
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="title1">Title*</label>
+                      <label htmlFor="title">Title*</label>
                       <input
                         type="text"
-                        name="title1"
+                        name="title"
                         className="form-control"
-                        id="title1"
+                        id="title"
                         onChange={this.onChange}
                         placeholder="Title"
                         required
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="excerpt1">Excerpt*</label>
+                      <label htmlFor="excerpt">Excerpt*</label>
                       <input
                         className="form-control"
-                        id="excerpt1"
-                        name="excerpt1"
+                        id="excerpt"
+                        name="excerpt"
                         onChange={this.onChange}
                         required
                       ></input>
@@ -128,12 +133,12 @@ class AddBlog extends Component {
                 </div>
                 <div className="col-12 col-lg-6 markdown">
                   <div className="justify-content-center">
-                    <img src={imageUrl1} alt={title1} />
+                    <img src={imageUrl} alt={title} />
                   </div>
                   <h1 className="font-weight-light text-center my-5">
-                    {title1}
+                    {title}
                   </h1>
-                  <ReactMarkdown children={body1} />
+                  <ReactMarkdown children={body} />
                 </div>
               </div>
             </div>

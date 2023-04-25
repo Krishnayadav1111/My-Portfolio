@@ -25,6 +25,7 @@ function BlogSection() {
                       title1={Blog.title1}
                       excerpt1={Blog.excerpt1}
                       imageUrl1={Blog.imageUrl1}
+                      id={Blog.id}
                     />
                   </div>
                 ))}

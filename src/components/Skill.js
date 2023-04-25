@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 
 function Skill(props) {
   let starsList = [];
-  const { name, imageUrl2, starsTotal, starsActive } = props.skill;
+  const { name, imageUrl, starsTotal, starsActive } = props.skill;
   for (let i = 0; i < starsTotal; i++) {
     if (i < starsActive) {
       starsList.push(
@@ -19,7 +19,7 @@ function Skill(props) {
     <>
       <div>
         <img
-          src={imageUrl2}
+          src={imageUrl}
           alt={name}
           style={{ width: "100px", height: "100px" }}
         />

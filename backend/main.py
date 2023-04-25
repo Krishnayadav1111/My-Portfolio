@@ -190,8 +190,24 @@ def add_projects():
         return {"isSuccessful": False}
 
 
+@app.route("/api/blog", methods=["POST"])
+def add_blogs():
+    try:
+        blog = request.json
+        print(blog)
+        # SQL query
+        query = "INSERT INTO blogs VALUES(%s,%s,%s,%s,%s,%s,%s);"
+        g.cursor.execute(query, [blog["id"], blog["imageUrl"],
+                         blog["title"], blog["excerpt"], blog["body"], True, datetime.datetime.now()],)
+        return {"isSuccessful": True}
+
+    except Exception as e:
+        logging.error(e)
+        return {"isSuccessful": False}
+
+
 @app.route("/api/project", methods=["GET"])
-def get_blog_by_id():
+def get_project_by_id():
     try:
         id = request.args.get("id")
         # SQL query
@@ -202,6 +218,23 @@ def get_blog_by_id():
                        "title": project[1], "body": project[2]}
         print(project)
         return {"isSuccessful": True, "result": project_obj}
+    except Exception as e:
+        logging.error(e)
+        return {"isSuccessful": False, "result": {}}
+
+
+@app.route("/api/blog", methods=["GET"])
+def get_blog_by_id():
+    try:
+        id = request.args.get("id")
+        # SQL query
+        query = "SELECT imageUrl,title,body FROM blogs WHERE id=%s;"
+        g.cursor.execute(query, [id])
+        blog = g.cursor.fetchone()
+        blog_obj = {"imageUrl": blog[0],
+                    "title": blog[1], "body": blog[2]}
+        print(blog)
+        return {"isSuccessful": True, "result": blog_obj}
     except Exception as e:
         logging.error(e)
         return {"isSuccessful": False, "result": {}}

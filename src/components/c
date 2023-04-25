@@ -6,3 +6,14 @@ INSERT INTO skills VALUES ('1','https://drive.google.com/drive/folders/1VCZWMjiy
     ('6', 'https://w7.pngwing.com/pngs/384/848/png-transparent-mysql-php-database-javascript-ajax-carnifex-blue-text-logo.png', 'MySQL', 3, 2),
     ('7', 'https://w7.pngwing.com/pngs/761/45/png-transparent-professional-python-programmer-computer-programming-android-android-blue-logo-computer-program-thumbnail.png', 'Python', 3, 2),
     ('8', 'https://w7.pngwing.com/pngs/166/342/png-transparent-flask-python-bottle-web-framework-web-application-flask-white-monochrome-shoe.png', 'FLASk', 3, 2);
+
+
+
+CREATE TABLE projects (
+id VARCHAR(36) PRIMARY KEY,
+ imageUrl TINYTEXT NOT NULL,
+ title TINYTEXT NOT NULL,
+ excerpt TINYTEXT NOT NULL,
+ body TEXT NOT NULL,
+ isPublished BOOL DEFAULT true,
+ lastModified DATETIME NOT NULL);

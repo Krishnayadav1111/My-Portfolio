@@ -152,21 +152,21 @@ export class Provider extends Component {
     Blogs: [
       {
         id: "1",
-        title1: "Blog 1",
-        imageUrl1: Blog1,
-        excerpt1: "This is my Blog about...",
+        title: "Blog 1",
+        imageUrl: Blog1,
+        excerpt: "This is my Blog about...",
       },
       {
         id: "2",
-        title1: "Blog 2",
-        imageUrl1: Blog2,
-        excerpt1: "This is my Blog about...",
+        title: "Blog 2",
+        imageUrl: Blog2,
+        excerpt: "This is my Blog about...",
       },
       {
         id: "3",
-        title1: "Blog 3",
-        imageUrl1: Blog3,
-        excerpt1: "This is my Blog about...",
+        title: "Blog 3",
+        imageUrl: Blog3,
+        excerpt: "This is my Blog about...",
       },
     ],
   };

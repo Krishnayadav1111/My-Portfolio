@@ -7,7 +7,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-md fixed-top bg-white">
         <div className="container my-1">
           <Link to="/" className="navbar-brand text-dark font-weight-bold">
-            Krishna yadav
+            Krishna Yadav
           </Link>
           <Link to="/contact" className="ml-auto mx-3">
             <button className="btn btn-outline-info ">Contact me</button>

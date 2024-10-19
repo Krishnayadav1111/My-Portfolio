@@ -9,18 +9,17 @@ class Projectpage extends Component {
     body: "",
   };
   async componentDidMount() {
-    const response = await axios.get(
-      `http://127.0.0.1:9000/api/project?id=${this.props.match.params.id}`
-    );
+    const response = await axios.get(`http://127.0.0.1:9000/api/projects/${this.props.match.params.id}`);
     const isSuccessful = response.data.isSuccessful;
     if (isSuccessful) {
-      this.setState({
-        imageUrl: response.data.result.imageUrl,
-        title: response.data.result.title,
-        body: response.data.result.body,
-      });
+        this.setState({
+            imageUrl: response.data.result.imageUrl,
+            title: response.data.result.title,
+            body: response.data.result.body,
+        });
     }
-  }
+}
+
   render() {
     // const { projects } = value;
     // const id = this.props.match.params.id;

@@ -38,6 +38,7 @@ class AddProject extends Component {
       title: this.state.title,
       excerpt: this.state.excerpt,
       body: this.state.body,
+      isPublished: true,
     };
     const response = await axios.post(
       "http://127.0.0.1:9000/api/project",

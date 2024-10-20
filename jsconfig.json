@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "paths": {
+      "pages/*": ["pages/*"],
+      "containers/*": ["containers/*"],
+      "helpers/*": ["helpers/*"],
+      "utils/*": ["utils/*"],
+      "components/*": ["components/*"],
+      "constants/*": ["constants/*"],
+      "navigators/*": ["navigators/*"]
+    },
+    "target": "ES6",   // Set the target ECMAScript version
+    "module": "ESNext"  // Use ESNext or ES6 modules (or "commonjs" if needed)
+  },
+  "include": ["src", "jsconfig.json"]
+}

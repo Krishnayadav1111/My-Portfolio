@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function LayoutFooter() {
   return (
     <div>
       <footer>
@@ -76,4 +76,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default LayoutFooter;

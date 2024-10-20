@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function LayoutHeader() {
   return (
     <>
       <nav className="navbar navbar-expand-md fixed-top bg-white">
@@ -44,4 +44,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default LayoutHeader;

@@ -53,11 +53,11 @@ class RecommendationCard extends Component {
                   {designation} at {company}
                 </Modal.Body>
 
-                <Modal.Footer>
+                <Modal.LayoutFooter>
                   <Button variant="secondary" onClick={this.handleClose}>
                     Close
                   </Button>
-                </Modal.Footer>
+                </Modal.LayoutFooter>
               </Modal>
             </div>
           </div>

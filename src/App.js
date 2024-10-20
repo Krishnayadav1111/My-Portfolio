@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import LayoutHeader from "./components/layout/LayoutHeader";
+import LayoutFooter from "./components/layout/LayoutFooter";
 import Contact from "./components/Contact";
 import Projectpage from "./components/Projectpage";
 import BlogPage from "./components/BlogPage";
@@ -28,7 +28,7 @@ function App() {
     <Provider>
       <BrowserRouter>
         <ScrollToTop />
-        <Navbar />
+        <LayoutHeader />
         <Switch>
           <Route exact path="/">
             <Title
@@ -57,7 +57,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
 
-        <Footer />
+        <LayoutFooter />
       </BrowserRouter>
     </Provider>
   );

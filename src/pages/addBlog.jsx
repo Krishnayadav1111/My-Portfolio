@@ -1,8 +1,9 @@
-import AddBlogContainer from 'containers/Addblog/addBlogContainer'
+
+import AddBlogContainer from 'containers/Addblog/AddBlogContainer'
 import React from 'react'
 
 
-function addBlog() {
+function AddBlog() {
   return (
     <>
       <AddBlogContainer/>
@@ -10,4 +11,4 @@ function addBlog() {
   )
 }
 
-export default addBlog
+export default AddBlog

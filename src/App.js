@@ -15,13 +15,16 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import WriteRecommendation from "./components/WriteRecommendation";
 import NotFound from "./components/NotFound";
 // import HomePage from "./components/HomePage";
-import AddProject from "./components/AddProject";
-import { Provider } from "./components/context";
+import { Provider } from "./helpers/context";
 import ProjectSection from "./components/ProjectSection";
 import AllProjects from "./components/AllProjects";
 import AllBlogs from "./components/AllBlogs";
-import AddBlog from "./components/AddBlog";
+import AddBlog from "pages/AddBlog";
 import ScrollToTop from "./components/ScrollToTop";
+import AddProject from './pages/AddProject';
+import Projects from "pages/Projects";
+
+
 
 function App() {
   return (
@@ -52,7 +55,7 @@ function App() {
           <Route exact path="/Blog/add" component={AddBlog} />
           <Route exact path="/allprojects" component={AllProjects} />
           <Route exact path="/allblogs" component={AllBlogs} />
-          <Route exact path="/project/:id" component={Projectpage} />
+          <Route exact path="/project/:id" component={Projects} />
           <Route exact path="/blog/:id" component={BlogPage} />
           <Route component={NotFound} />
         </Switch>

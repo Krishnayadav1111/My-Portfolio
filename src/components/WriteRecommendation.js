@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Consumer } from "./context";
+import { Consumer } from "../helpers/context";
 import { v4 as uuid } from "uuid";
 
 class WriteRecommendation extends Component {

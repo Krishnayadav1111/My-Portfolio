@@ -1,7 +1,7 @@
 import React from "react";
 import Skill from "./Skill";
 import { v4 as uuid } from "uuid";
-import { Consumer } from "./context";
+import { Consumer } from "../helpers/context";
 
 function SkillSection() {
   return (

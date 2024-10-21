@@ -1,5 +1,5 @@
 import React from "react";
-import { Consumer } from "./context.js";
+import { Consumer } from "../helpers/context.js";
 import BlogCards from "./BlogCards";
 
 function AllBlogs() {

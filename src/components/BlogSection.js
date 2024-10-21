@@ -1,7 +1,7 @@
 import React from "react";
 
 import BlogCards from "./BlogCards";
-import { Consumer } from "./context";
+import { Consumer } from "../helpers/context";
 import { Link } from "react-router-dom";
 
 function BlogSection() {

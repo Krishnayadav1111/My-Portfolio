@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import ReactMarkdown from "react-markdown";
-import { Consumer } from "./context";
+import { Consumer } from "helpers/context";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
 

@@ -10,10 +10,12 @@
       "utils/*": ["utils/*"],
       "components/*": ["components/*"],
       "constants/*": ["constants/*"],
+      "@styles/*": ["src/styles/*"],
       "navigators/*": ["navigators/*"]
     },
-    "target": "ES6",   // Set the target ECMAScript version
-    "module": "ESNext"  // Use ESNext or ES6 modules (or "commonjs" if needed)
+    "target": "ES6",
+    "module": "ESNext"
   },
-  "include": ["src", "jsconfig.json"]
+  "include": ["src", "jsconfig.json"],
+  "exclude": ["node_modules", "dist"]
 }

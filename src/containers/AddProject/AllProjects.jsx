@@ -1,6 +1,7 @@
 import React from "react";
-import { Consumer } from "../helpers/context.js";
-import Projectcard from "./Projectcard";
+
+import { Consumer } from "helpers/context";
+import Projectcard from "components/common/Projectcard";
 
 function AllProjects() {
   return (

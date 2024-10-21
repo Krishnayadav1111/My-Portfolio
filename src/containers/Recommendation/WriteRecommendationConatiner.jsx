@@ -1,8 +1,8 @@
+import { Consumer } from "helpers/context";
 import React, { Component } from "react";
-import { Consumer } from "../helpers/context";
 import { v4 as uuid } from "uuid";
 
-class WriteRecommendation extends Component {
+class WriteRecommendationConatiner extends Component {
   state = {
     name: "",
     email: "",
@@ -139,4 +139,4 @@ class WriteRecommendation extends Component {
   }
 }
 
-export default WriteRecommendation;
+export default WriteRecommendationConatiner;

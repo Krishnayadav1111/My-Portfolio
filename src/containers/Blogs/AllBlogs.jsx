@@ -1,6 +1,7 @@
 import React from "react";
-import { Consumer } from "../helpers/context.js";
-import BlogCards from "./BlogCards";
+
+import { Consumer } from "helpers/context";
+import BlogCards from "components/common/BlogCards";
 
 function AllBlogs() {
   return (

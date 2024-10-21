@@ -1,38 +1,41 @@
 import React from "react";
-import { Consumer } from "../helpers/context.js";
-import { Link } from "react-router-dom";
-import Projectcard from "./Projectcard.js";
 
-function ProjectSection() {
+
+
+import { Link } from "react-router-dom";
+import { Consumer } from "helpers/context";
+import BlogCards from "components/common/BlogCards";
+
+function BlogsSection() {
   return (
     <Consumer>
       {(value) => {
-        const { projects } = value;
+        const { Blogs } = value;
         return (
           <>
             <div className="container text-center my-5">
               <h1 className="font-weight-light">
-                My <span className="text-info">Projects</span>
+                My <span className="text-info">Blogs</span>
               </h1>
               <div className="lead">
                 I build products. Just like this website
               </div>
               <div className="row my-5 pt-3">
-                {projects.slice(0, 3).map((project) => (
-                  <div key={project.id} className="col-12 col-md-4 my-2">
-                    <Projectcard
-                      title={project.title}
-                      excerpt={project.excerpt}
-                      imageUrl={project.imageUrl}
-                      id={project.id}
+                {Blogs.slice(0, 3).map((Blog) => (
+                  <div key={Blog.id} className="col-12 col-md-4 my-2">
+                    <BlogCards
+                      title1={Blog.title1}
+                      excerpt1={Blog.excerpt1}
+                      imageUrl1={Blog.imageUrl1}
+                      id={Blog.id}
                     />
                   </div>
                 ))}
               </div>
               <div className="my-5">
-                <Link to="/allprojects" className="text-dark text-right">
+                <Link to="/allblogs" className="text-dark text-right">
                   <h5>
-                    See my projects
+                    See my Blogs
                     <i className="fa-solid fa-arrow-right align-middle"></i>
                   </h5>
                 </Link>
@@ -45,4 +48,4 @@ function ProjectSection() {
   );
 }
 
-export default ProjectSection;
+export default BlogsSection;

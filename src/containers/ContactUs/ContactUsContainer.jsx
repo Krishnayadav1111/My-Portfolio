@@ -1,7 +1,7 @@
 // import { event } from "jquery";
 import React, { Component } from "react";
 
-export default class Contact extends Component {
+export default class ContactUsContainer extends Component {
   // constructor() {
   //   super();
 

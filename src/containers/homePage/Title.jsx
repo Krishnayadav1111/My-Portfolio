@@ -1,5 +1,5 @@
 import React from "react";
-import krishna from "../asset/krishna.png";
+import krishna from "../../asset/krishna.png";
 
 function Title(props) {
   const { name, leadText } = props;

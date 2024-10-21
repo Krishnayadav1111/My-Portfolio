@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/api/blogs', blogRoutes);
-app.use('/api/projects', projectRoutes);
+app.use('/api/project', projectRoutes);
 app.use('/api/recommendations', recommendationRoutes);
 app.use('/api/skills', skillRoutes);
 

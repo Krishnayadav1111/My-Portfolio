@@ -25,10 +25,10 @@ function LayoutHeader() {
           >
             <div className="navbar-nav">
               <a
-                href="/"
+                href="/project/add"
                 className="nav-item nav-link text-dark h6 mx-1 my-auto"
               >
-                Projects
+               Add Project
               </a>
               <a
                 href="/"

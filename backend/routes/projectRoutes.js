@@ -15,7 +15,8 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST a new project
-router.post('/', async (req, res) => {
+router.post('http://127.0.0.1:3000/api/project', async (req, res) => {
+    console.log(req.body);
     try {
         const newProject = new Project({
             imageUrl: req.body.imageUrl,

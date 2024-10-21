@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { Consumer } from "helpers/context";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
+import { commonService } from "store/common/commonService";
 
 class AddProjectContainer extends Component {
   state = {
@@ -40,10 +41,8 @@ class AddProjectContainer extends Component {
       body: this.state.body,
       isPublished: true,
     };
-    const response = await axios.post(
-      "http://127.0.0.1:9000/api/project",
-      newProject
-    );
+    const response = await commonService.contactMe(newProject)
+    console.log(response,"response")
     const isSuccessful = response.data.isSuccessful;
 
     if (isSuccessful) {
